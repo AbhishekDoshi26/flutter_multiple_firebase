@@ -14,10 +14,19 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
+
+enum ProjectType {
+  project1,
+  project2,
+}
+
 class DefaultFirebaseOptions {
-  static FirebaseOptions get currentPlatform {
+  static FirebaseOptions currentPlatform({
+    ProjectType projectType = ProjectType.project1,
+  }) {
     if (kIsWeb) {
-      return web;
+      if (projectType == ProjectType.project1) return webProject1;
+      return webProject2;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -52,7 +61,16 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
+  static const FirebaseOptions webProject1 = FirebaseOptions(
+    apiKey: 'AIzaSyAfIGXVCzncwp5YAVZNHq1ItFU83CaKK2k',
+    appId: '1:238064588163:web:41a6898ce32f1cb663d2b6',
+    messagingSenderId: '238064588163',
+    projectId: 'project2-3fa19',
+    authDomain: 'project2-3fa19.firebaseapp.com',
+    storageBucket: 'project2-3fa19.appspot.com',
+  );
+
+  static const FirebaseOptions webProject2 = FirebaseOptions(
     apiKey: 'AIzaSyCQRjOJE5sQ02ohliIzOKZKwyFPsFbGcXI',
     appId: '1:1066468374177:web:5c0aa5a9e7c838ba0962e0',
     messagingSenderId: '1066468374177',
