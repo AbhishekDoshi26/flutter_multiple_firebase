@@ -43,20 +43,8 @@ class _HomeState extends State<Home> {
           Text('Firebase Apps: ${Firebase.apps}'),
           ElevatedButton(
             onPressed: () async {
-              if (isFirebaseInitialized) {
-                await Firebase.app().delete();
-                await Firebase.initializeApp(
-                  options: DefaultFirebaseOptions.currentPlatform(),
-                );
-                setState(() {
-                  isFirebaseInitialized = false;
-                });
-              }
-
+              await Firebase.app().delete();
               await Firebase.initializeApp(
-                name: projectType == ProjectType.project1
-                    ? 'project1'
-                    : 'project2',
                 options: DefaultFirebaseOptions.currentPlatform(
                   projectType: projectType,
                 ),

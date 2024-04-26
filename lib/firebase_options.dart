@@ -61,7 +61,7 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions webProject1 = FirebaseOptions(
+  static const FirebaseOptions webProject2 = FirebaseOptions(
     apiKey: 'AIzaSyAfIGXVCzncwp5YAVZNHq1ItFU83CaKK2k',
     appId: '1:238064588163:web:41a6898ce32f1cb663d2b6',
     messagingSenderId: '238064588163',
@@ -70,7 +70,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'project2-3fa19.appspot.com',
   );
 
-  static const FirebaseOptions webProject2 = FirebaseOptions(
+  static const FirebaseOptions webProject1 = FirebaseOptions(
     apiKey: 'AIzaSyCQRjOJE5sQ02ohliIzOKZKwyFPsFbGcXI',
     appId: '1:1066468374177:web:5c0aa5a9e7c838ba0962e0',
     messagingSenderId: '1066468374177',

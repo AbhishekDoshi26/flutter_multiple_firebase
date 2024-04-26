@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_firebase/firebase_options.dart';
 import 'package:flutter_firebase/home.dart';
 
-void main()async {
+void main() async {
+  await Firebase.app().delete();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform(),
   );
